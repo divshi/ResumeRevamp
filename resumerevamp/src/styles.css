@@ -1,0 +1,193 @@
+/* styles.css */
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Header Styles */
+  .header {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+  
+  .header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .header ul {
+    display: flex;
+    margin: 0;
+  }
+  
+  .header li {
+    margin: 0 15px;
+  }
+  
+  .header a {
+    color: white;
+    font-size: 16px;
+  }
+  
+  .logo {
+    height: 40px;
+  }
+  
+  .theme-toggle {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  /* Banner Styles */
+  .banner {
+    background: url('https://via.placeholder.com/1500x500?text=Banner+Image') no-repeat center center;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+  }
+  
+  .banner-text {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /* Services Section Styles */
+  .services {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 20px;
+    background-color: white;
+  }
+  
+  .service-box {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 30%;
+    text-align: center;
+  }
+  
+  .service-box img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .service-box h2 {
+    margin-top: 0;
+  }
+  
+  /* About Us Section Styles */
+  .about-us {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+  }
+  
+  .about-us h2 {
+    margin-top: 0;
+  }
+  
+  /* Testimonials Section Styles */
+  .testimonials {
+    padding: 50px 20px;
+    background-color: white;
+    text-align: center;
+  }
+  
+  .testimonial-box {
+    display: inline-block;
+    width: 30%;
+    margin: 0 1.5%;
+    background: #f9f9f9;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+  .testimonial-box img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+  
+  /* Contact Us Section Styles */
+  .contact-us {
+    padding: 50px 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+  }
+  
+  .contact-us form {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .contact-us label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .contact-us input, .contact-us textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .contact-us button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .contact-us button:hover {
+    background-color: #555;
+  }
+  
+  /* Footer Styles */
+  footer {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+  }
+  
+  .footer-icons {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .footer-icons a {
+    color: white;
+    font-size: 20px;
+    margin: 0 10px;
+  }
+  
