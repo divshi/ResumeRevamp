@@ -8,11 +8,17 @@ const services = [
 ];
 
 const Services = () => (
-  <section className="services">
+  <section id="services" className="services">
     {services.map((service, index) => (
-      <div key={index} className="service-box">
-        <h2>{service.title}</h2>
-        <p>{service.description}</p>
+      <div key={index} className="service-card">
+        <div className="card-inner">
+          <div className="card-front">
+            <h2>{service.title}</h2>
+          </div>
+          <div className="card-back">
+            <p>{service.description}</p>
+          </div>
+        </div>
       </div>
     ))}
   </section>

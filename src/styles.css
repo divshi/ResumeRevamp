@@ -1,193 +1,412 @@
 /* styles.css */
 
+/* Define CSS Variables for Light and Dark Modes */
+:root {
+  /* Light Mode Variables */
+  --primary-color: #72abe2; /* Light Blue */
+  --background-color: #e0f0ff; /* Very Light Blue */
+  --secondary-background: #cce4ff; /* Light Blue */
+  --text-color: #333333; /* Dark Gray */
+  --header-background: var(--primary-color);
+  --header-text-color: #ffffff;
+  --card-background: var(--secondary-background);
+  --card-text-color: var(--text-color);
+  --footer-background: var(--primary-color);
+  --footer-text-color: #ffffff;
+  --button-background: var(--primary-color);
+  --button-text-color: #ffffff;
+  --input-background: #e0f0ff; /* Very Light Blue */
+  --input-text-color: var(--text-color);
+  --border-color: #b3d1ff; /* Light Blue Border */
+}
+body.dark {
+  /* Dark Mode Variables */
+  --primary-color: #72abe2; /* Light Blue (same as before) */
+  --background-color: #153965; /* Dark Blueish */
+  --secondary-background: #1e4b8b; /* Muted Darker Blue */
+  --text-color: #f4f4f4; /* Light Gray */
+  --header-background: #153965;
+  --header-text-color: #f4f4f4;
+  --card-background: #1e4b8b;
+  --card-text-color: #f4f4f4;
+  --footer-background: #153965;
+  --footer-text-color: #f4f4f4;
+  --button-background: #72abe2; /* Keep Light Blue */
+  --button-text-color: #ffffff;
+  --input-background: #1e4b8b;
+  --input-text-color: #f4f4f4;
+  --border-color: #4a6fa5; /* Dark Blue Border */
+}
+
+
 /* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Header Styles */
+.header {
+  background-color: var(--header-background);
+  color: var(--header-text-color);
+  padding: 10px 20px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header ul {
+  display: flex;
+  margin: 0;
+}
+
+.header li {
+  margin: 0 15px;
+}
+
+.header a {
+  color: var(--header-text-color);
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.logo {
+  height: 40px;
+}
+
+.theme-toggle {
+  background: transparent;
+  border: none;
+  color: var(--header-text-color);
+  font-size: 20px;
+  cursor: pointer;
+  margin-right: 15px;
+}
+
+.theme-toggle:focus {
+  outline: none;
+}
+
+/* Banner Styles */
+.banner {
+  position: relative;
+  height: 90vh;
+  background: url('https://via.placeholder.com/1500x800?text=Banner+Image') no-repeat center center;
+  background-size: cover;
+  color: var(--header-text-color);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  margin-top: 60px; /* Height of the header */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent overlay */
+  transition: background-color 0.3s;
+}
+
+body.dark .banner::before {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.banner-text {
+  position: relative;
+  z-index: 1;
+}
+
+.banner h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  color: var(--header-text-color);
+}
+
+.banner p {
+  font-size: 24px;
+  color: var(--header-text-color);
+}
+
+/* Services Section Styles */
+.services {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 50px 20px;
+  background-color: var(--background-color);
+  height: 100vh;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.service-card {
+  width: 30%;
+  perspective: 1000px;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.service-card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: var(--card-background);
+  color: var(--card-text-color);
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  background-color: var(--secondary-background);
+}
+
+.card-back p {
+  font-size: 16px;
+}
+
+/* About Us Section Styles */
+.about-us {
+  padding: 50px 20px;
+  background-color: var(--background-color);
+  text-align: center;
+  height: 100vh;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.about-us h2 {
+  margin-top: 0;
+  font-size: 36px;
+  color: var(--text-color);
+}
+
+.about-us p {
+  font-size: 18px;
+  max-width: 800px;
+  margin: 20px auto;
+  color: var(--text-color);
+}
+/* Testimonials Section Styles */
+.testimonials {
+  padding: 50px 20px;
+  background-color: var(--background-color);
+  text-align: center;
+  height: 100vh; 
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.testimonials-heading {
+  margin-bottom: 170px; /* Space below the heading */
+}
+
+.testimonials-headline {
+  font-size: 36px;
+  color: var(--text-color);
+}
+
+.testimonials .testimonial-container {
+  display: flex;
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center items horizontally */
+  flex-wrap: wrap; /* Allow wrapping on small screens */
+  gap: 20px; /* Space between testimonial boxes */
+}
+
+.testimonials .testimonial-box {
+  width: 30%;
+  background: var(--card-background);
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s, color 0.3s;
+}
+
+.testimonials .testimonial-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+
+.testimonials img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.testimonials p {
+  margin-top: 15px;
+  font-size: 16px;
+  color: var(--text-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .testimonials .testimonial-container {
+    flex-direction: column; /* Stack testimonials vertically on small screens */
+    align-items: center; /* Center items horizontally */
   }
-  
-  a {
-    text-decoration: none;
-    color: inherit;
+
+  .testimonials .testimonial-box {
+    width: 80%; /* Full width on small screens */
   }
-  
-  ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  /* Header Styles */
-  .header {
-    background-color: #333;
-    color: white;
-    padding: 10px 20px;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-  }
-  
-  .header nav {
-    display: flex;
-    justify-content: space-between;
+}
+
+/* Contact Us Section Styles */
+.contact-us {
+  padding: 50px 20px;
+  margin-top: 20px;
+  background-color: var(--background-color);
+  text-align: center;
+  height: 100vh;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.contact-us h2 {
+  margin-top: 0;
+  font-size: 36px;
+  color: var(--text-color);
+}
+
+.contact-us form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-us label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: var(--text-color);
+}
+
+.contact-us input, .contact-us textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background-color: var(--input-background);
+  color: var(--input-text-color);
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.contact-us button {
+  padding: 10px 20px;
+  background-color: var(--button-background);
+  color: var(--button-text-color);
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.contact-us button:hover {
+  background-color: #5a9ecf; /* Slightly darker shade for hover */
+}
+
+/* Footer Styles */
+footer {
+  background-color: var(--footer-background);
+  color: var(--footer-text-color);
+  padding: 20px;
+  text-align: center;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.footer-icons a {
+  color: var(--footer-text-color);
+  font-size: 24px;
+  margin: 0 10px;
+  transition: color 0.3s;
+}
+
+.footer-icons a:hover {
+  color: #dddddd;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .services, .testimonials {
+    flex-direction: column;
     align-items: center;
   }
-  
+
+  .service-card, .testimonial-box {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+
+  .header nav {
+    flex-direction: column;
+  }
+
   .header ul {
-    display: flex;
-    margin: 0;
+    flex-direction: column;
   }
-  
+
   .header li {
-    margin: 0 15px;
+    margin: 10px 0;
   }
-  
-  .header a {
-    color: white;
-    font-size: 16px;
+
+  .banner h1 {
+    font-size: 32px;
   }
-  
-  .logo {
-    height: 40px;
+
+  .banner p {
+    font-size: 18px;
   }
-  
-  .theme-toggle {
-    background: transparent;
-    border: none;
-    color: white;
-    font-size: 20px;
-    cursor: pointer;
-  }
-  
-  /* Banner Styles */
-  .banner {
-    background: url('https://via.placeholder.com/1500x500?text=Banner+Image') no-repeat center center;
-    background-size: cover;
-    color: white;
-    text-align: center;
-    padding: 100px 20px;
-  }
-  
-  .banner-text {
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  
-  /* Services Section Styles */
-  .services {
-    display: flex;
-    justify-content: space-around;
-    padding: 50px 20px;
-    background-color: white;
-  }
-  
-  .service-box {
-    background: #fff;
-    border: 1px solid #ddd;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    width: 30%;
-    text-align: center;
-  }
-  
-  .service-box img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-  }
-  
-  .service-box h2 {
-    margin-top: 0;
-  }
-  
-  /* About Us Section Styles */
-  .about-us {
-    padding: 50px 20px;
-    background-color: #f9f9f9;
-    text-align: center;
-  }
-  
-  .about-us h2 {
-    margin-top: 0;
-  }
-  
-  /* Testimonials Section Styles */
-  .testimonials {
-    padding: 50px 20px;
-    background-color: white;
-    text-align: center;
-  }
-  
-  .testimonial-box {
-    display: inline-block;
-    width: 30%;
-    margin: 0 1.5%;
-    background: #f9f9f9;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  }
-  
-  .testimonial-box img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-  }
-  
-  /* Contact Us Section Styles */
-  .contact-us {
-    padding: 50px 20px;
-    background-color: #f4f4f4;
-    text-align: center;
-  }
-  
-  .contact-us form {
-    max-width: 600px;
-    margin: 0 auto;
-  }
-  
-  .contact-us label {
-    display: block;
-    margin-bottom: 10px;
-  }
-  
-  .contact-us input, .contact-us textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-  }
-  
-  .contact-us button {
-    padding: 10px 20px;
-    background-color: #333;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .contact-us button:hover {
-    background-color: #555;
-  }
-  
-  /* Footer Styles */
-  footer {
-    background-color: #333;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-  }
-  
-  .footer-icons {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .footer-icons a {
-    color: white;
-    font-size: 20px;
-    margin: 0 10px;
-  }
-  
+}

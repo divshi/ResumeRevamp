@@ -1,28 +1,39 @@
-// Header.jsx
-import React, { useState } from 'react';
+// Header.js
+import React, { useState, useEffect } from 'react';
 import ThemeToggle from './ThemeToggle';
+import { Link } from 'react-scroll';
+import logo from '../assets/logo2.png'; 
 
 const Header = () => {
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState(() => {
+    // Check localStorage for theme preference
+    const savedTheme = localStorage.getItem('theme');
+    return savedTheme ? savedTheme : 'light';
+  });
+
+  // Apply the theme class to the body
+  useEffect(() => {
+    document.body.className = theme;
+    localStorage.setItem('theme', theme); // Save theme preference
+  }, [theme]);
 
   const handleToggle = () => {
-    setTheme(theme === 'light' ? 'dark' : 'light');
-    document.body.className = theme; // Apply the theme to the body
+    setTheme(prevTheme => (prevTheme === 'light' ? 'dark' : 'light'));
   };
 
   return (
-    <header className={`header ${theme}`}>
+    <header className="header">
       <nav>
         <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#make-resume">Make Resume</a></li>
-          <li><a href="#about-us">About Us</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#testimonials">Testimonials</a></li>
-          <li><a href="#contact-us">Contact Us</a></li>
+          <li><Link to="home" smooth={true} duration={500}>Home</Link></li>
+          {/* <li><Link to="make-resume" smooth={true} duration={500}>Make Resume</Link></li> */}
+          <li><Link to="about-us" smooth={true} duration={500}>About Us</Link></li>
+          <li><Link to="services" smooth={true} duration={500}>Services</Link></li>
+          <li><Link to="testimonials" smooth={true} duration={500}>Testimonials</Link></li>
+          <li><Link to="contact-us" smooth={true} duration={500}>Contact Us</Link></li>
         </ul>
         <ThemeToggle onToggle={handleToggle} />
-        <img src="/path-to-logo.png" alt="Logo" className="logo" />
+        <img src={logo} alt="Logo" className="logo" />
       </nav>
     </header>
   );

@@ -2,20 +2,20 @@
 import React from 'react';
 
 const ContactUs = () => (
-  <section className="contact-us">
+  <section id="contact-us" className="contact-us">
     <h2>Contact Us</h2>
     <form>
       <label>
         Name:
-        <input type="text" name="name" />
+        <input type="text" name="name" required />
       </label>
       <label>
         Email:
-        <input type="email" name="email" />
+        <input type="email" name="email" required />
       </label>
       <label>
         Message:
-        <textarea name="message"></textarea>
+        <textarea name="message" required></textarea>
       </label>
       <button type="submit">Send</button>
     </form>
