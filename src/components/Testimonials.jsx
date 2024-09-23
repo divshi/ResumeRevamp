@@ -3,7 +3,7 @@ import React from 'react';
 
 const testimonials = [
   { image: 'https://via.placeholder.com/100', content: 'Great service! My resume looks amazing now.' },
-  { image: 'https://via.placeholder.com/100', content: 'The resume score checker was very helpful.' },
+  { image: 'https://via.placeholder.com/100', content: 'The resume score checker was really very helpful.' },
   { image: 'https://via.placeholder.com/100', content: 'Highly recommend ResumeRevamp for job hunting.' },
 ];
 
