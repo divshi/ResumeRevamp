@@ -115,7 +115,7 @@ ul {
 .banner {
   position: relative;
   height: 90vh;
-  background: url('https://via.placeholder.com/1500x800?text=Banner+Image') no-repeat center center;
+  background: url('./assets/banner.jpg') no-repeat center center;
   background-size: cover;
   color: var(--header-text-color);
   text-align: center;
