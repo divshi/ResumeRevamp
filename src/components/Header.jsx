@@ -26,7 +26,6 @@ const Header = () => {
       <nav>
         <ul>
           <li><Link to="home" smooth={true} duration={500}>Home</Link></li>
-          {/* <li><Link to="make-resume" smooth={true} duration={500}>Make Resume</Link></li> */}
           <li><Link to="about-us" smooth={true} duration={500}>About Us</Link></li>
           <li><Link to="services" smooth={true} duration={500}>Services</Link></li>
           <li><Link to="testimonials" smooth={true} duration={500}>Testimonials</Link></li>
