@@ -32,7 +32,7 @@ const Header = () => {
           <li className="mx-1 sm:mx-4"><Link to="testimonials" smooth={true} duration={500} className="text-sm sm:text-lg hover:underline">Testimonials</Link></li>
           <li className="mx-1 sm:mx-4"><Link to="contact-us" smooth={true} duration={500} className="text-sm sm:text-lg hover:underline">Contact Us</Link></li>
         </ul>
-      <div className="flex items-center space-x-1.5 sm:space-x-40">
+      <div className="flex items-center space-x-1.5 sm:space-x-40 mr-4 sm:mr-12">
         <ThemeToggle onToggle={handleToggle} className="bg-transparent border-none text-sm sm:text-lg cursor-pointer" />
         <img src={logo} alt="Logo" className="h-7" />
       </div>
