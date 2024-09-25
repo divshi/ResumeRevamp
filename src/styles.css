@@ -21,23 +21,22 @@
 }
 body.dark {
   /* Dark Mode Variables */
-  --primary-color: #72abe2; /* Light Blue (same as before) */
-  --background-color: #153965; /* Dark Blueish */
-  --secondary-background: #1e4b8b; /* Muted Darker Blue */
-  --text-color: #f4f4f4; /* Light Gray */
+  --primary-color: #72abe2; 
+  --background-color: #153965; 
+  --secondary-background: #1e4b8b; 
+  --text-color: #f4f4f4;
   --header-background: #153965;
   --header-text-color: #f4f4f4;
   --card-background: #1e4b8b;
   --card-text-color: #f4f4f4;
   --footer-background: #153965;
   --footer-text-color: #f4f4f4;
-  --button-background: #72abe2; /* Keep Light Blue */
+  --button-background: #72abe2; 
   --button-text-color: #ffffff;
   --input-background: #1e4b8b;
   --input-text-color: #f4f4f4;
-  --border-color: #4a6fa5; /* Dark Blue Border */
+  --border-color: #4a6fa5; 
 }
-
 
 /* General Styles */
 body {
@@ -59,130 +58,7 @@ ul {
   padding: 0;
   margin: 0;
 }
-/* Header Styles */
-.header {
-  background-color: var(--header-background);
-  color: var(--header-text-color);
-  padding: 10px 20px;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  transition: background-color 0.3s, color 0.3s;
-}
 
-.header nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.header ul {
-  display: flex;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.header li {
-  margin: 0 15px;
-}
-
-.header a {
-  color: var(--header-text-color);
-  font-size: 18px; /* Adjust size as needed */
-  text-decoration: none;
-}
-
-.logo {
-  height: 40px; /* Adjust size as needed */
-}
-
-/* Theme Toggle Button */
-.theme-toggle {
-  background: transparent;
-  border: none;
-  color: var(--header-text-color);
-  font-size: 24px; /* Adjust size as needed */
-  cursor: pointer;
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-  .header nav {
-    flex-direction: column; /* Stack items vertically on small screens */
-    align-items: flex-start; /* Align items to the start */
-  }
-
-  .header ul {
-    flex-direction: column; /* Stack menu items vertically on small screens */
-  }
-
-  .header li {
-    margin: 10px 0; /* Space between items */
-  }
-
-  .header a {
-    font-size: 16px; /* Smaller font size for mobile */
-  }
-
-  .logo {
-    height: 40px; /* Smaller logo size for mobile */
-  }
-
-  .theme-toggle {
-    font-size: 20px; /* Smaller toggle button size for mobile */
-  }
-}
-
-
-/* Banner Styles */
-.banner {
-  position: relative;
-  height: 90vh;
-  background: url('./assets/banner.jpg') no-repeat center center;
-  background-size: cover;
-  color: var(--header-text-color);
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 20px;
-  margin-top: 60px; /* Height of the header */
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.banner::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent overlay */
-  transition: background-color 0.3s;
-}
-
-body.dark .banner::before {
-  background-color: rgba(0, 0, 0, 0.6);
-}
-
-.banner-text {
-  position: relative;
-  z-index: 1;
-}
-
-.banner h1 {
-  font-size: 48px;
-  margin-bottom: 20px;
-  color: var(--header-text-color);
-}
-
-.banner p {
-  font-size: 24px;
-  color: var(--header-text-color);
-}
 
 /* Services Section Styles */
 .services {

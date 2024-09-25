@@ -1,4 +1,5 @@
 // Header.js
+
 import React, { useState, useEffect } from 'react';
 import ThemeToggle from './ThemeToggle';
 import { Link } from 'react-scroll';
@@ -22,17 +23,17 @@ const Header = () => {
   };
 
   return (
-    <header className="header">
-      <nav>
-        <ul>
-          <li><Link to="home" smooth={true} duration={500}>Home</Link></li>
-          <li><Link to="about-us" smooth={true} duration={500}>About Us</Link></li>
-          <li><Link to="services" smooth={true} duration={500}>Services</Link></li>
-          <li><Link to="testimonials" smooth={true} duration={500}>Testimonials</Link></li>
-          <li><Link to="contact-us" smooth={true} duration={500}>Contact Us</Link></li>
+    <header className={`fixed top-0 left-0 w-full z-50 transition-colors duration-300 ${theme === 'light' ? 'bg-blue-200 text-gray-800' : 'bg-blue-900 text-gray-200'}`}>
+      <nav className="flex justify-between items-center p-4">
+        <ul className="flex m-0 p-0 list-none">
+          <li className="mx-4"><Link to="home" smooth={true} duration={500} className="text-lg hover:underline">Home</Link></li>
+          <li className="mx-4"><Link to="about-us" smooth={true} duration={500} className="text-lg hover:underline">About Us</Link></li>
+          <li className="mx-4"><Link to="services" smooth={true} duration={500} className="text-lg hover:underline">Services</Link></li>
+          <li className="mx-4"><Link to="testimonials" smooth={true} duration={500} className="text-lg hover:underline">Testimonials</Link></li>
+          <li className="mx-4"><Link to="contact-us" smooth={true} duration={500} className="text-lg hover:underline">Contact Us</Link></li>
         </ul>
-        <ThemeToggle onToggle={handleToggle} />
-        <img src={logo} alt="Logo" className="logo" />
+        <ThemeToggle onToggle={handleToggle} className="bg-transparent border-none text-lg cursor-pointer" />
+        <img src={logo} alt="Logo" className="h-7" />
       </nav>
     </header>
   );
