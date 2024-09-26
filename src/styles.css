@@ -1,12 +1,14 @@
 /* styles.css */
 
+
 /* Define CSS Variables for Light and Dark Modes */
+
 :root {
   /* Light Mode Variables */
-  --primary-color: #72abe2; /* Light Blue */
-  --background-color: #e0f0ff; /* Very Light Blue */
-  --secondary-background: #cce4ff; /* Light Blue */
-  --text-color: #333333; /* Dark Gray */
+  --primary-color: #72abe2; 
+  --background-color: #e0f0ff;
+  --secondary-background: #cce4ff; 
+  --text-color: #333333; 
   --header-background: var(--primary-color);
   --header-text-color: #ffffff;
   --card-background: var(--secondary-background);
@@ -15,9 +17,9 @@
   --footer-text-color: #ffffff;
   --button-background: var(--primary-color);
   --button-text-color: #ffffff;
-  --input-background: #e0f0ff; /* Very Light Blue */
+  --input-background: #e0f0ff; 
   --input-text-color: var(--text-color);
-  --border-color: #b3d1ff; /* Light Blue Border */
+  --border-color: #b3d1ff; 
 }
 body.dark {
   /* Dark Mode Variables */
@@ -38,7 +40,9 @@ body.dark {
   --border-color: #4a6fa5; 
 }
 
+
 /* General Styles */
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -61,6 +65,7 @@ ul {
 
 
 /* Services Section Styles */
+
 .services {
   display: flex;
   justify-content: space-around;
@@ -132,7 +137,9 @@ ul {
   font-size: 16px;
 }
 
+
 /* About Us Section Styles */
+
 .about-us {
   padding: 50px 20px;
   background-color: var(--background-color);
@@ -153,7 +160,10 @@ ul {
   margin: 20px auto;
   color: var(--text-color);
 }
+
+
 /* Testimonials Section Styles */
+
 .testimonials {
   padding: 50px 20px;
   background-color: var(--background-color);
@@ -208,16 +218,18 @@ ul {
 /* Responsive Design */
 @media (max-width: 768px) {
   .testimonials .testimonial-container {
-    flex-direction: column; /* Stack testimonials vertically on small screens */
-    align-items: center; /* Center items horizontally */
+    flex-direction: column;
+    align-items: center;
   }
 
   .testimonials .testimonial-box {
-    width: 80%; /* Full width on small screens */
+    width: 80%; 
   }
 }
 
+
 /* Contact Us Section Styles */
+
 .contact-us {
   padding: 50px 20px;
   margin-top: 150px;
