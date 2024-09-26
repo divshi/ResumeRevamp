@@ -25,7 +25,7 @@ const Header = () => {
   return (
     <header className={`fixed top-0 left-0 w-full z-50 transition-colors duration-300 ${theme === 'light' ? 'bg-blue-200 text-gray-800' : 'bg-blue-900 text-gray-200'}`}>
     <nav className="flex flex-nowrap px-0 py-3 ">
-        <ul className="flex flex-grow justify-start m-1 list-none overflow-hidden">
+        <ul className="flex flex-grow justify-start m-2 list-none overflow-hidden">
           <li className="mx-0.5 sm:mx-4"><Link to="home" smooth={true} duration={500} className="text-sm sm:text-lg hover:underline">Home</Link></li>
           <li className="mx-0.5 sm:mx-4"><Link to="about-us" smooth={true} duration={500} className="text-sm sm:text-lg hover:underline">About Us</Link></li>
           <li className="mx-0.5 sm:mx-4"><Link to="services" smooth={true} duration={500} className="text-sm sm:text-lg hover:underline">Services</Link></li>
