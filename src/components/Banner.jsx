@@ -13,6 +13,7 @@ const Banner = () => (
       <h1 className="text-4xl md:text-6xl mb-5">Welcome to ResumeRevamp</h1>
       <p className="text-lg md:text-2xl">Your gateway to professional resume services.</p>
     </div>
+    
   </section>
 );
 
